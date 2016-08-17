@@ -1,0 +1,38 @@
+{
+  "name": "website-template",
+  "description": "a work flow for build template of website",
+  "main": "index.js",
+  "authors": [
+    "ouranoshong"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "pug",
+    "gulp",
+    "scss"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.97.7"
+  },
+
+  "vendors": {
+    "jquery": {
+      "src": [
+        "bower_components/jquery/dist/jquery.min.js"
+      ]
+    },
+    "materialize": {
+      "src": [
+        "bower_components/materialize/dist/**/*"
+      ]
+    }
+  }
+}
