@@ -4,21 +4,25 @@
 doctype html
 html
     head
+
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible",content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
         block title
             title Default title
 
-        link(rel="stylesheet", href="materialize/css/materialize.min.css")
-        link(rel="stylesheet", href="main.css")
-
         block stylesheets
+            link(rel="stylesheet", href="materialize.css")
+            link(rel="stylesheet", href="main.css")
+
+
 
     body
         block content
-
-        script(src="jquery/jquery.min.js", async="")
-        script(src="materialize/js/materialize.min.js", async="")
+            main.container Main Content
 
 
         block scripts
-
-
+            script(src="jquery/jquery.min.js", type="text/javascript")
+            script(src="materialize/js/materialize.min.js", type="text/javascript")

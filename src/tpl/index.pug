@@ -1,7 +1,24 @@
-extends ./_base
+extends ./_base.pug
 
 block title
     title Index Page
 
 block content
     include ./components/navbar.html
+    include ./components/slider.html
+
+    main.container.
+        Main Content
+
+
+    include ./components/footer.html
+
+
+append scripts
+    script(type="text/javascript").
+        $(function() {
+            $('.slider').slider({
+                height: 550
+            });
+            $(".button-collapse").sideNav();
+        });

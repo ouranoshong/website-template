@@ -31,8 +31,12 @@
     },
     "materialize": {
       "src": [
-        "bower_components/materialize/dist/**/*"
-      ]
+        "bower_components/materialize/dist/**/*.js"
+      ],
+      "sass": [
+        "bower_components/materialize/sass/**/**"
+      ],
+      "fonts": "bower_components/materialize/fonts/**/**"
     }
   }
 }

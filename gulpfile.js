@@ -76,8 +76,8 @@ gulp.task('dev', ['clean:dev','js:dev', 'sass:dev', 'tpl:dev'], function () {
 
     // 我们使用gulp的文件监听功能，来实时编译修改过后的文件
     gulp.watch('src/js/*.js', ['js:dev']);
-    gulp.watch('src/sass/*.scss', ['sass:dev']);
-    gulp.watch(['src/tpl/*.pug', 'src/tpl/**/*.html'], ['tpl:dev']);
+    gulp.watch('src/sass/**/*.scss', ['sass:dev']);
+    gulp.watch(['src/tpl/**/*.pug', 'src/tpl/**/*.html'], ['tpl:dev']);
 });
 
 
@@ -85,7 +85,7 @@ gulp.task('build', ['clean','fonts', 'js', 'tpl', 'sass']);
 
 gulp.task('vendors:clean', function(){
     return gulp.src('/')
-        .pipe(vendorPath);
+        .pipe(clean(vendorPath));
 });
 
 gulp.task('vendors:jquery', function(){
@@ -99,5 +99,17 @@ gulp.task('vendors:materialize', function(){
     var destPath = vendorPath + '/materialize';
     return gulp.src(vendors.materialize.src)
         .pipe(clean(destPath))
+        .pipe(gulp.dest(destPath));
+});
+
+gulp.task('vendors:materialize:sass', function(){
+    var destPath = 'src/sass';
+    return gulp.src(vendors.materialize.sass)
+        .pipe(gulp.dest(destPath));
+});
+
+gulp.task('vendors:materialize:fonts', function(){
+    var destPath = 'src/fonts';
+    return gulp.src(vendors.materialize.fonts)
         .pipe(gulp.dest(destPath));
 });
